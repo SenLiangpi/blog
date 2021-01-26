@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-08-22 21:37:05
  * @LastEditors: Pi Patle
- * @LastEditTime: 2021-01-15 14:28:02
+ * @LastEditTime: 2021-01-26 11:18:01
 -->
 <template>
   <div id="app" @click="click_on" :style="{backgroundColor: style[styleRandom].backgroundColor}">
@@ -25,32 +25,6 @@
 </template>
 
 <script>
-import vueAmx from 'vue-amx'
-import Vue from 'vue'
-let store = {
-  /*
-    * data中的数据是会永久存储的,页面关闭或打开新的的页面时数据不会覆盖还会是你页面关闭前最后一次修改的数据，
-    * 新打开的页面和老的页面可以进行实时的数据共享
-  */
-  data:{
-    a:{
-      a:1,
-      b:2,
-      c:3
-    }
-  },
-  //tData中的数据会在关闭这个页面时清除数据，在新打开的页面中不会有上个页面的数据，页面直接也没办法数据共享
-  tData:{
-    b:{
-      a:1,
-      b:2,
-      c:3
-    }
-  }
-}
-import vueamx from 'vue-amx'
-Vue.use(vueamx,store);
-
 function snowF() {
   var requestAnimationFrame =
     window.requestAnimationFrame ||
