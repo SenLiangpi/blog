@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-08-22 21:37:05
  * @LastEditors: Pi Patle
- * @LastEditTime: 2021-01-26 11:18:01
+ * @LastEditTime: 2021-01-29 11:47:08
 -->
 <template>
   <div id="app" @click="click_on" :style="{backgroundColor: style[styleRandom].backgroundColor}">
@@ -198,7 +198,7 @@ export default {
   mounted() {
     this.$nextTick(() => {
       // $("#app").css("cursor","url(static/ico/5f97dfe502f15.128px.ico) 64 64 ,auto");
-      // snowF();
+      snowF();
       audioAutoPlay();
     });
   },

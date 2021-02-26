@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2019-07-18 09:31:21
  * @LastEditors: Pi Patle
- * @LastEditTime: 2020-10-16 15:28:06
+ * @LastEditTime: 2021-02-25 10:53:27
  -->
 <template>
   <div class="blog">
@@ -304,7 +304,7 @@
             </div>
           </router-link>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4">20px
           <router-link to="/tensorflow">
             <div class="col-md-12">
               <h5>JavaScript的本地存储与数据监听</h5>
