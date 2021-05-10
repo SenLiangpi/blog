@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2019-07-18 09:31:21
  * @LastEditors: Pi Patle
- * @LastEditTime: 2021-04-23 16:34:43
+ * @LastEditTime: 2021-05-10 15:00:55
  -->
 <template>
   <div class="blog">
@@ -34,18 +34,17 @@
         </div>
       </div>
     </header>
-    <div class="test-lists container">
+    <router-view/>
+    <!-- <div class="test-lists container">
       <div class="dom-list"  v-for="(a,index) in lists" :key="index">
-        <router-link to="/">
-          <h1>关于前端组件通信的一些理解</h1>
+        <router-link :to="a.href">
+          <h1>{{a.name}}</h1>
           <p>
-            关于前端组件通信的一些理解场景 吾辈同时是 vue/react 的使用者。 在使用现代前端框架时，
-            我们经常要要面对的问题之一就是组件之间的通信，目前我们有着很多选择，包括但不限于以下这些。 
-            Super Component Props: 将状态或操作放在父组件，然后传递到子组件。该特性在 vue/react 都存在
-            Context/Provider Pattern: 将状态放在父组件，然后所有的</p>
+            {{a.text}}
+          </p>
         </router-link>
       </div>
-    </div>
+    </div> -->
     <!-- <div class="container">
       <hr />
 
@@ -78,7 +77,15 @@ export default {
         'static/pipi/file_6212662.webp',
       ],
       imgpipi: '',
-      lists: [1,2,3,4,5,6,7,8]
+      lists: [
+        {
+          name: 'wangEditor —— 轻量级web富文本框 测试demo',
+          text: `wangEditor 是一款使用 Typescript 开发的 Web 富文本编辑器， 轻量、简洁、易用、开源免费。
+            兼容常见的 PC 浏览器：Chrome，Firefox，Safar，Edge，QQ 浏览器，IE11。
+            不支持移动端`,
+          href: '/blog/editor'
+        },
+      ]
     };
   },
   created(){

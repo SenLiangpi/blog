@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-08-22 21:37:05
  * @LastEditors: Pi Patle
- * @LastEditTime: 2021-01-29 11:47:08
+ * @LastEditTime: 2021-05-10 10:18:30
 -->
 <template>
   <div id="app" @click="click_on" :style="{backgroundColor: style[styleRandom].backgroundColor}">
