@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-08-22 21:37:05
  * @LastEditors: Pi Patle
- * @LastEditTime: 2021-05-10 10:18:30
+ * @LastEditTime: 2021-06-03 17:21:35
 -->
 <template>
   <div id="app" @click="click_on" :style="{backgroundColor: style[styleRandom].backgroundColor}">
@@ -174,7 +174,7 @@ export default {
         {
           image: 'static/background/Cover.jpg',
           opacity: '1',
-          gradient: 'none',
+          gradient: 'rgb(0 0 0 / 80%)',
           backgroundColor: '#000',
           bgm:'static/bgm/Eminence Symphony Orchestra.flac',
           backgroundPosition: '0 center'
@@ -182,7 +182,7 @@ export default {
         {
           image: 'static/background/yan.jpg',
           opacity: '1',
-          gradient: 'none',
+          gradient: 'rgb(0 0 0 / 80%)',
           backgroundColor: '#000',
           bgm:'static/bgm/Eminence Symphony Orchestra.flac',
           backgroundPosition: 'center center'

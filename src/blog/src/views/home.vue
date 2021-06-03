@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-08-22 22:43:42
  * @LastEditors: Pi Patle
- * @LastEditTime: 2021-01-29 11:45:39
+ * @LastEditTime: 2021-06-03 11:30:13
 -->
 <template>
   <div class="home">
@@ -34,9 +34,7 @@
               <!-- <p><router-link to="">Blog</router-link></p> -->
               <p><router-link to="/blog">Blog</router-link></p>
               <p>
-                <a target="view_window" href="https://github.com/SenLiangpi"
-                  >GitHub</a
-                >
+                <a target="view_window" href="https://github.com/SenLiangpi">GitHub</a>
               </p>
               <p>
                 <a
@@ -152,11 +150,13 @@ export default {
   margin: 50px auto 0;
   overflow: hidden;
   text-align: center;
-  width: 415px;
+  width: 440px;
+  display: flex;
 }
 .lists p {
-  float: left;
-  padding: 0 10px;
+  flex-grow: 1;
+  // float: left;
+  // padding: 0 10px;
   margin: 0;
 }
 .container {
