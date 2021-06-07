@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2019-07-18 09:31:21
  * @LastEditors: Pi Patle
- * @LastEditTime: 2021-05-10 15:00:55
+ * @LastEditTime: 2021-06-07 10:06:49
  -->
 <template>
   <div class="blog">
@@ -60,21 +60,21 @@ export default {
   data() {
     return {
       images:[
-        'static/pipi/file_6212624.webp',
-        'static/pipi/file_6212625.webp',
-        'static/pipi/file_6212626.webp',
-        'static/pipi/file_6212627.webp',
-        'static/pipi/file_6212628.webp',
-        'static/pipi/file_6212629.webp',
-        'static/pipi/file_6212630.webp',
-        'static/pipi/file_6212631.webp',
-        'static/pipi/file_6212632.webp',
-        'static/pipi/file_6212623.webp',
-        'static/pipi/file_6212651.webp',
-        'static/pipi/file_6212659.webp',
-        'static/pipi/file_6212660.webp',
-        'static/pipi/file_6212661.webp',
-        'static/pipi/file_6212662.webp',
+        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212624.webp',
+        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212625.webp',
+        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212626.webp',
+        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212627.webp',
+        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212628.webp',
+        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212629.webp',
+        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212630.webp',
+        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212631.webp',
+        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212632.webp',
+        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212623.webp',
+        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212651.webp',
+        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212659.webp',
+        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212660.webp',
+        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212661.webp',
+        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212662.webp',
       ],
       imgpipi: '',
       lists: [

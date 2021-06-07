@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-08-22 21:37:05
  * @LastEditors: Pi Patle
- * @LastEditTime: 2021-06-07 09:58:00
+ * @LastEditTime: 2021-06-07 10:03:56
 -->
 <template>
   <div id="app" @click="click_on" :style="{backgroundColor: style[styleRandom].backgroundColor}">
@@ -160,7 +160,7 @@ export default {
           opacity: '1',
           gradient: 'linear-gradient(45deg, #002453 0%,#ff2b4a 100%)',
           backgroundColor: '#000',
-          bgm:'static/bgm/FeellikeCrying.mp3',
+          bgm:'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/bgm/FeellikeCrying.mp3',
           backgroundPosition: 'center center'
         },
         {
@@ -168,7 +168,7 @@ export default {
           opacity: '0.75',
           gradient: 'linear-gradient(65deg, #002453 34%,#ff2b4a 100%)',
           backgroundColor: '#000',
-          bgm:'static/bgm/SwanSong.mp3',
+          bgm:'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/bgm/SwanSong.mp3',
           backgroundPosition: 'center center'
         },
         {
@@ -176,7 +176,7 @@ export default {
           opacity: '1',
           gradient: 'rgb(0 0 0 / 80%)',
           backgroundColor: '#000',
-          bgm:'static/bgm/EminenceSymphonyOrchestra.mp3',
+          bgm:'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/bgm/EminenceSymphonyOrchestra.mp3',
           backgroundPosition: '0 center'
         },
         {
@@ -184,7 +184,7 @@ export default {
           opacity: '1',
           gradient: 'rgb(0 0 0 / 80%)',
           backgroundColor: '#000',
-          bgm:'static/bgm/EminenceSymphonyOrchestra.mp3',
+          bgm:'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/bgm/EminenceSymphonyOrchestra.mp3',
           backgroundPosition: 'center center'
         }
       ],
