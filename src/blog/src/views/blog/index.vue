@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2019-07-18 09:31:21
  * @LastEditors: Pi Patle
- * @LastEditTime: 2021-06-07 10:06:49
+ * @LastEditTime: 2021-09-23 15:23:32
  -->
 <template>
   <div class="blog">
@@ -55,26 +55,28 @@
   </div>
 </template>
 <script>
+import { environment_variable } from '@/utils/index.js'
+let resource_address = environment_variable().url;
 export default {
   name: "blog",
   data() {
     return {
       images:[
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212624.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212625.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212626.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212627.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212628.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212629.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212630.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212631.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212632.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212623.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212651.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212659.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212660.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212661.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212662.webp',
+        resource_address+'pipi/file_6212624.webp',
+        resource_address+'pipi/file_6212625.webp',
+        resource_address+'pipi/file_6212626.webp',
+        resource_address+'pipi/file_6212627.webp',
+        resource_address+'pipi/file_6212628.webp',
+        resource_address+'pipi/file_6212629.webp',
+        resource_address+'pipi/file_6212630.webp',
+        resource_address+'pipi/file_6212631.webp',
+        resource_address+'pipi/file_6212632.webp',
+        resource_address+'pipi/file_6212623.webp',
+        resource_address+'pipi/file_6212651.webp',
+        resource_address+'pipi/file_6212659.webp',
+        resource_address+'pipi/file_6212660.webp',
+        resource_address+'pipi/file_6212661.webp',
+        resource_address+'pipi/file_6212662.webp',
       ],
       imgpipi: '',
       lists: [

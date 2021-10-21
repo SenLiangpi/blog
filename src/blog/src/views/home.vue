@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-08-22 22:43:42
  * @LastEditors: Pi Patle
- * @LastEditTime: 2021-06-07 10:06:28
+ * @LastEditTime: 2021-10-21 11:54:49
 -->
 <template>
   <div class="home">
@@ -16,7 +16,7 @@
       <div class="banner-content dtable fullscreen">
         <div class="content-inner dtablecell">
           <div class="container"> -->
-          <div class="container">
+          <div class="container" v-if="true">
             <transition name="fade">
               <img class="imgpipi" v-if="img_if_1" :src="images[imgpipi]" alt />
             </transition>
@@ -54,29 +54,31 @@
 </template>
  
 <script>
+import { environment_variable } from '@/utils/index.js'
+let resource_address = environment_variable().url;
 export default {
   name: "home",
   data() {
     return {
       images:[
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212624.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212625.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212626.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212627.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212628.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212629.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212630.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212631.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212632.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212623.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212651.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212659.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212660.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212661.webp',
-        'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212662.webp'
+        resource_address+'pipi/file_6212624.webp',
+        resource_address+'pipi/file_6212625.webp',
+        resource_address+'pipi/file_6212626.webp',
+        resource_address+'pipi/file_6212627.webp',
+        resource_address+'pipi/file_6212628.webp',
+        resource_address+'pipi/file_6212629.webp',
+        resource_address+'pipi/file_6212630.webp',
+        resource_address+'pipi/file_6212631.webp',
+        resource_address+'pipi/file_6212632.webp',
+        resource_address+'pipi/file_6212623.webp',
+        resource_address+'pipi/file_6212651.webp',
+        resource_address+'pipi/file_6212659.webp',
+        resource_address+'pipi/file_6212660.webp',
+        resource_address+'pipi/file_6212661.webp',
+        resource_address+'pipi/file_6212662.webp'
       ],
-      imgpipi: 'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212623.webp',
-      imgpipi1: 'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/pipi/file_6212624.webp',
+      imgpipi: resource_address+'pipi/file_6212623.webp',
+      imgpipi1: resource_address+'pipi/file_6212624.webp',
       imgpipi_opacity: '1',
       imgpipi_opacity1: '0',
       img_if_1: true,
