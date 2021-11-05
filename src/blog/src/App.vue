@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-08-22 21:37:05
  * @LastEditors: Pi Patle
- * @LastEditTime: 2021-09-26 11:36:23
+ * @LastEditTime: 2021-11-05 15:01:30
 -->
 <template>
   <div id="app" @click="click_on" :style="{backgroundColor: style[styleRandom].backgroundColor}">
@@ -200,146 +200,192 @@ export default {
     };
   },
   created(){
-    document.getElementById('SwanSong').src = this.style[this.styleRandom].bgm;
-    document.getElementById('SwanSong').onended = ()=> {
-      if(this.styleRandom === 3){
-        this.styleRandom = 0;
-      }else{
-        this.styleRandom ++;
-      }
-      document.getElementById('SwanSong').src = this.style[this.styleRandom].bgm;
-      audioAutoPlay();
-    };
+    // document.getElementById('SwanSong').src = this.style[this.styleRandom].bgm;
+    // document.getElementById('SwanSong').onended = ()=> {
+    //   if(this.styleRandom === 3){
+    //     this.styleRandom = 0;
+    //   }else{
+    //     this.styleRandom ++;
+    //   }
+    //   document.getElementById('SwanSong').src = this.style[this.styleRandom].bgm;
+    //   audioAutoPlay();
+    // };
+
     // console.log(data_json)
-    let data_time = new Date().getTime();
+    // let data_time = new Date().getTime();
     let hash_arr = [];
-    let hash_32 = [];
-    let hash_32_16 = [];
+    // let hash_32 = [];
+    // let hash_32_16 = [];
     for(let a in data_json.RECORDS){
       hash_arr.push(murmurHash3.x64.hash128(data_json.RECORDS[a].leads_id))
-      hash_32.push(("00000000" + (murmurhash.v3(data_json.RECORDS[a].leads_id) >>> 0).toString(16)).slice(-8))
-      hash_32_16.push(murmurhash.v3(data_json.RECORDS[a].leads_id))
+      // hash_32.push(("00000000" + (murmurhash.v3(data_json.RECORDS[a].leads_id) >>> 0).toString(16)).slice(-8))
+      // hash_32_16.push(murmurhash.v3(data_json.RECORDS[a].leads_id))
     }
     console.log(hash_arr.length)
-    let tree_structure = {};
-    for(let a in hash_arr){
-      switch(hash_arr[a].slice(0,1)){
-        case "0":
-          if(!tree_structure['0']){
-            tree_structure['0'] = []
+    
+    let trie = (arr,floor)=>{
+      for(let a = 0;a<floor;a++){
+        arr = traverse(arr,a);
+        // console.log(arr)
+      }
+      return arr
+    }
+    let traverse = (data,floor)=>{
+      let cycle = (json,index = 0)=>{
+        if(index < floor){
+          for(let a in json){
+            json[a] = cycle(json[a],(index+1))
           }
-          tree_structure['0'].push(hash_arr[a])
-          break;
-        case "1":
-          if(!tree_structure['1']){
-            tree_structure['1'] = []
-          }
-          tree_structure['1'].push(hash_arr[a])
-          break;
-        case "2":
-          if(!tree_structure['2']){
-            tree_structure['2'] = []
-          }
-          tree_structure['2'].push(hash_arr[a])
-          break;
-        case "3":
-          if(!tree_structure['3']){
-            tree_structure['3'] = []
-          }
-          tree_structure['3'].push(hash_arr[a])
-          break;
-        case "4":
-          if(!tree_structure['4']){
-            tree_structure['4'] = []
-          }
-          tree_structure['4'].push(hash_arr[a])
-          break;
-        case "5":
-          if(!tree_structure['5']){
-            tree_structure['5'] = []
-          }
-          tree_structure['5'].push(hash_arr[a])
-          break;
-        case "6":
-          if(!tree_structure['6']){
-            tree_structure['6'] = []
-          }
-          tree_structure['6'].push(hash_arr[a])
-          break;
-        case "7":
-          if(!tree_structure['7']){
-            tree_structure['7'] = []
-          }
-          tree_structure['7'].push(hash_arr[a])
-          break;
-        case "8":
-          if(!tree_structure['8']){
-            tree_structure['8'] = []
-          }
-          tree_structure['8'].push(hash_arr[a])
-          break;
-        case "9":
-          if(!tree_structure['9']){
-            tree_structure['9'] = []
-          }
-          tree_structure['9'].push(hash_arr[a])
-          break;
-        case "a":
-          if(!tree_structure['a']){
-            tree_structure['a'] = []
-          }
-          tree_structure['a'].push(hash_arr[a])
-          break;
-        case "b":
-          if(!tree_structure['b']){
-            tree_structure['b'] = []
-          }
-          tree_structure['b'].push(hash_arr[a])
-          break;
-        case "c":
-          if(!tree_structure['c']){
-            tree_structure['c'] = []
-          }
-          tree_structure['c'].push(hash_arr[a])
-          break;
-        case "d":
-          if(!tree_structure['d']){
-            tree_structure['d'] = []
-          }
-          tree_structure['d'].push(hash_arr[a])
-          break;
-        case "e":
-          if(!tree_structure['e']){
-            tree_structure['e'] = []
-          }
-          tree_structure['e'].push(hash_arr[a])
-          break;
-        case "f":
-          if(!tree_structure['f']){
-            tree_structure['f'] = []
-          }
-          tree_structure['f'].push(hash_arr[a])
-          break;
+          return json
+        }else{
+          return grouping(json,floor)
+        }
+      }
+      return cycle(data)
+    }
+    let grouping = (arr,floor)=>{
+      let tree_structure = {};
+      for(let a in arr){
+        switch(arr[a].slice(floor,(floor+1))){
+          case "0":
+            if(!tree_structure['0']){
+              tree_structure['0'] = []
+            }
+            tree_structure['0'].push(arr[a])
+            break;
+          case "1":
+            if(!tree_structure['1']){
+              tree_structure['1'] = []
+            }
+            tree_structure['1'].push(arr[a])
+            break;
+          case "2":
+            if(!tree_structure['2']){
+              tree_structure['2'] = []
+            }
+            tree_structure['2'].push(arr[a])
+            break;
+          case "3":
+            if(!tree_structure['3']){
+              tree_structure['3'] = []
+            }
+            tree_structure['3'].push(arr[a])
+            break;
+          case "4":
+            if(!tree_structure['4']){
+              tree_structure['4'] = []
+            }
+            tree_structure['4'].push(arr[a])
+            break;
+          case "5":
+            if(!tree_structure['5']){
+              tree_structure['5'] = []
+            }
+            tree_structure['5'].push(arr[a])
+            break;
+          case "6":
+            if(!tree_structure['6']){
+              tree_structure['6'] = []
+            }
+            tree_structure['6'].push(arr[a])
+            break;
+          case "7":
+            if(!tree_structure['7']){
+              tree_structure['7'] = []
+            }
+            tree_structure['7'].push(arr[a])
+            break;
+          case "8":
+            if(!tree_structure['8']){
+              tree_structure['8'] = []
+            }
+            tree_structure['8'].push(arr[a])
+            break;
+          case "9":
+            if(!tree_structure['9']){
+              tree_structure['9'] = []
+            }
+            tree_structure['9'].push(arr[a])
+            break;
+          case "a":
+            if(!tree_structure['a']){
+              tree_structure['a'] = []
+            }
+            tree_structure['a'].push(arr[a])
+            break;
+          case "b":
+            if(!tree_structure['b']){
+              tree_structure['b'] = []
+            }
+            tree_structure['b'].push(arr[a])
+            break;
+          case "c":
+            if(!tree_structure['c']){
+              tree_structure['c'] = []
+            }
+            tree_structure['c'].push(arr[a])
+            break;
+          case "d":
+            if(!tree_structure['d']){
+              tree_structure['d'] = []
+            }
+            tree_structure['d'].push(arr[a])
+            break;
+          case "e":
+            if(!tree_structure['e']){
+              tree_structure['e'] = []
+            }
+            tree_structure['e'].push(arr[a])
+            break;
+          case "f":
+            if(!tree_structure['f']){
+              tree_structure['f'] = []
+            }
+            tree_structure['f'].push(arr[a])
+            break;
+        }
+      }
+      return tree_structure
+    }
+    let finish = trie(hash_arr,4);
+    
+    // console.log(new Date().getTime()-data_time)
+    // console.log(finish)
+    let inquire = (key,floor = 0,data = finish)=>{
+      if(floor == 4){
+        return data
+      }else{
+        return inquire(key,(floor+1),data[key.slice(floor,(floor+1))])
       }
     }
-    console.log(new Date().getTime()-data_time)
-    console.log(tree_structure)
-    console.log(murmurHash3.x86.hash32('111'))
-    console.log(murmurhash.v3('111'))
-    console.log(murmur128('111'))
-    console.log(("00000000" + (murmurhash.v3('111') >>> 0).toString(16)).slice(-8))
+    let time_1 = new Date().getTime();
+    for(let a in hash_arr){
+      if(hash_arr[a] == "7030c29fc4c47fcba7adb508d078f3b2"){
+        console.log(hash_arr[a])
+        console.log(new Date().getTime()-time_1)
+        break
+      }
+    }
+    let time_2 = new Date().getTime();
+    console.log(inquire("7030c29fc4c47fcba7adb508d078f3b2"))
+    console.log(new Date().getTime()-time_2)
+    // console.log(murmurHash3.x86.hash32('111'))
+    // console.log(murmurhash.v3('111'))
+    // console.log(murmur128('111'))
+    // console.log(("00000000" + (murmurhash.v3('111') >>> 0).toString(16)).slice(-8))
     // console.log(hash_32)
     // console.log(new Set(hash_32))
     // console.log(hash_32_16)
     // console.log(new Set(hash_32_16))
-    console.log(hash_arr)
-    console.log(new Set(hash_arr))
+
+    // console.log(hash_arr)
+    // console.log(new Set(hash_arr))
   },
   mounted() {
     this.$nextTick(() => {
       // $("#app").css("cursor","url(static/ico/5f97dfe502f15.128px.ico) 64 64 ,auto");
-      snowF();
-      audioAutoPlay();
+      // snowF();
+      // audioAutoPlay();
     });
   },
   methods: {
