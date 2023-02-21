@@ -5,7 +5,7 @@
  * @Website: https://senliangpi.github.io/blog/#/
  * @Date: 2020-08-22 22:43:42
  * @LastEditors: Pi Patle
- * @LastEditTime: 2021-10-21 11:54:49
+ * @LastEditTime: 2023-02-21 11:37:13
 -->
 <template>
   <div class="home">
@@ -24,15 +24,15 @@
               <img class="imgpipi" v-if="img_if_2" :src="images[imgpipi1]" alt />
             </transition>
             <p class="name">皮皮</p>
-            <p>皮皮的皮卡丘研究所製作(￣▽￣)"</p>
+            <p>皮皮研究所製作(￣▽￣)"</p>
             <p>
               Email:
               <a href="mailto:pisenliang@gmail.com">pisenliang@gmail.com</a>
             </p>
             <p></p>
             <div class="lists">
-              <!-- <p><router-link to="">Blog</router-link></p> -->
-              <p><router-link to="/blog">Blog</router-link></p>
+              <p><router-link to="">Blog</router-link></p>
+              <!-- <p><router-link to="/blog">Blog</router-link></p> -->
               <p>
                 <a target="view_window" href="https://github.com/SenLiangpi">GitHub</a>
               </p>
