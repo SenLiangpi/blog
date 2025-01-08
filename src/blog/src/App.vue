@@ -69,7 +69,7 @@ export default {
           opacity: '1',
           gradient: 'rgb(0 0 0 / 80%)',
           backgroundColor: '#000',
-          bgm:resource_address+'bgm/EminenceSymphonyOrchestra.flac',
+          bgm:resource_address+'bgm/EminenceSymphonyOrchestra.mp3',
           backgroundPosition: '0 center'
         },
         {
@@ -77,7 +77,7 @@ export default {
           opacity: '1',
           gradient: 'rgb(0 0 0 / 80%)',
           backgroundColor: '#000',
-          bgm:resource_address+'bgm/EminenceSymphonyOrchestra.flac',
+          bgm:resource_address+'bgm/EminenceSymphonyOrchestra.mp3',
           backgroundPosition: 'center center'
         }
       ],
@@ -105,16 +105,16 @@ export default {
   },
   methods: {
     click_on(){
-      // let audioSwanSong = document.getElementById('SwanSong')
-      // if(this.audioSwanSong_type){
-      //   try{
-      //     this.audioSwanSong_type = false
-      //     audioSwanSong.play()
-      //     audioAutoPlay()
-      //   }catch(error){
-      //     audioAutoPlay()
-      //   }
-      // }
+      let audioSwanSong = document.getElementById('SwanSong')
+      if(this.audioSwanSong_type){
+        try{
+          this.audioSwanSong_type = false
+          audioSwanSong.play()
+          audioAutoPlay()
+        }catch(error){
+          audioAutoPlay()
+        }
+      }
       // if(audioSwanSong.paused){                 
       //   audioSwanSong.play();// 播放  
       // }else{

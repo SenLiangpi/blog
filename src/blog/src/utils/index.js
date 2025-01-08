@@ -12,12 +12,12 @@ export function environment_variable(){
   console.log(process.env.NODE_ENV)
   switch (process.env.NODE_ENV) {
     case 'production':
-      data.url = 'static/'
-      // data.url = 'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/'
+      // data.url = 'static/'
+      data.url = 'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/'
       break;
     case 'development':
-      data.url = 'static/'
-      // data.url = 'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/'
+      // data.url = 'static/'
+      data.url = 'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/'
       break;
     case 'dev':
       data.url = 'https://pi-1258780943.cos.ap-hongkong.myqcloud.com/blog/'
